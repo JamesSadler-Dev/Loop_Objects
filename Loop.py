@@ -41,9 +41,9 @@ class Loop:
     async def async_manual_next(self):
         if self.current < self.iterations:
             if self.arg != None:
-                result = await self.func(self.arg)
+                result = self.func(self.arg)
             else:
-                result = await self.func()
+                result = self.func()
             self.current += 1
         else:
             raise StopIteration
